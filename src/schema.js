@@ -19,7 +19,7 @@ const typeDefs = gql`
     "Human-readable message for UI"
     message: String!
     "Updated track after mutation"
-    track: Track!
+    track: Track
   }
 
   "A track is a group of Modules that teach a specific topic"
