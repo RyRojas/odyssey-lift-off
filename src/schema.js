@@ -20,6 +20,12 @@ const typeDefs = gql`
     length: Int
     "Number of modules in learning track"
     modulesCount: Int
+    "Track's complete list of Modules"
+    modules: [Module!]!
+    "The track's complete description (can be in MD)"
+    description: String
+    "Number of times track has been viewed"
+    numberOfViews: Int
   }
 
   "Author of a complete learning Track or Module"
@@ -27,6 +33,13 @@ const typeDefs = gql`
     id: ID!
     name: String!
     photo: String
+  }
+
+  "A single unit of teaching. Multiple Modules compose a Track"
+  type Module {
+    id: ID!
+    title: String!
+    length: Int
   }
 `;
 
