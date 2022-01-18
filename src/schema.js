@@ -33,7 +33,7 @@ const typeDefs = gql`
     "URL for learning track thumbnail"
     thumbnail: String
     "Approximate time required (mins) to complete learning track"
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
     "Number of modules in learning track"
     modulesCount: Int
     "Track's complete list of Modules"
@@ -42,6 +42,8 @@ const typeDefs = gql`
     description: String
     "Number of times track has been viewed"
     numberOfViews: Int
+    "Track's full duration, in seconds"
+    durationInSeconds: Int
   }
 
   "Author of a complete learning Track or Module"
@@ -55,7 +57,9 @@ const typeDefs = gql`
   type Module {
     id: ID!
     title: String!
-    length: Int
+    length: Int @deprecated(reason: "Use durationInSeconds")
+    "Module's video duration, in seconds"
+    durationInSeconds: Int
   }
 `;
 
